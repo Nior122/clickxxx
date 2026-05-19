@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Redirecting...</title>
 </head>
 <body>
@@ -13,7 +17,11 @@
             "https://bio.site/CynthiApp"
         ];
 
-        const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+        // Use timestamp as extra entropy to guarantee a fresh random pick every time
+        const seed = Date.now();
+        const randomIndex = Math.floor((seed % 1000) / 1000 * urls.length);
+        const randomUrl = urls[randomIndex];
+
         window.location.replace(randomUrl);
     </script>
     <noscript>
