@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Redirecting...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Redirecting...</title>
+<script>
+  var urls = [
+    "https://bio.site/ThandoApp",
+    "https://bio.site/QueensApp",
+    "https://bio.site/BellieApp",
+    "https://bio.site/KhayalethApp",
+    "https://bio.site/CynthiApp"
+  ];
+  location.replace(urls[Math.floor(Math.random() * urls.length)]);
+</script>
 </head>
 <body>
-    <script>
-        const urls = [
-            "https://bio.site/ThandoApp",
-            "https://bio.site/QueensApp",
-            "https://bio.site/BellieApp",
-            "https://bio.site/KhayalethApp",
-            "https://bio.site/CynthiApp"
-        ];
-
-        // Use timestamp as extra entropy to guarantee a fresh random pick every time
-        const seed = Date.now();
-        const randomIndex = Math.floor((seed % 1000) / 1000 * urls.length);
-        const randomUrl = urls[randomIndex];
-
-        window.location.replace(randomUrl);
-    </script>
-    <noscript>
-        <p>Redirecting... If you are not redirected, <a href="https://bio.site/ThandoApp">click here</a>.</p>
-    </noscript>
+<noscript>
+  <a href="https://bio.site/ThandoApp">Continue</a>
+</noscript>
 </body>
 </html>
